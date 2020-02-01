@@ -36,6 +36,10 @@ target 'MarocM' do
 
   pod 'RNLocalize', :path => '../node_modules/react-native-localize'
 
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'MarocMTests' do
     inherit! :search_paths
     # Pods for testing

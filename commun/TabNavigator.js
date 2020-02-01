@@ -1,25 +1,27 @@
-import {createAppContainer} from 'react-navigation';
-import {createBottomTabNavigator} from 'react-navigation-tabs';
-import Explore from '../screens/Explore';
-import Saved from '../screens/Saved';
-import Inbox from '../screens/Inbox';
-import Trip from '../screens/Trip';
+import {createStackNavigator} from 'react-navigation-stack';
+import OffreInfoPage from '../pages/OffreInfoPage';
+import BottomNav from './BottomNav';
 
-const TabNavigator = createBottomTabNavigator({
-  Explore: {
-    screen: Explore,
+const MainNavigator = createStackNavigator(
+  {
+    Home: {
+      screen: BottomNav,
+      navigationOptions: {
+        header: null,
+        gesturesEnabled: false,
+      },
+    },
+    offreInfoPage: {
+      screen: OffreInfoPage,
+      navigationOptions: {
+        header: null,
+        gesturesEnabled: false,
+      },
+    },
   },
-  Saved: {
-    screen: Saved,
+  {
+    initialRouteName: 'Home',
   },
-  Trip: {
-    screen: Trip,
-  },
-  Inbox: {
-    screen: Inbox,
-  },
-  Profile: {
-    screen: Inbox,
-  },
-});
-export default createAppContainer(TabNavigator);
+);
+
+export default MainNavigator;

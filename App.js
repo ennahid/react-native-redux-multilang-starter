@@ -14,6 +14,7 @@ import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 import rootReducer from './redux/reducers';
 import {setI18nConfig, RnLocalize, translate} from './translations/helper';
+import AppContainer from './commun/AppNavigator';
 
 const client = axios.create({
   baseURL: 'https://api.github.com',
@@ -41,13 +42,7 @@ const App = () => {
     setI18nConfig();
     forceUpdate();
   };
-  return (
-    <Provider store={store}>
-      <View>
-        <Text>{translate('hello')}</Text>
-      </View>
-    </Provider>
-  );
+  return <AppContainer />;
 };
 
 export default App;
